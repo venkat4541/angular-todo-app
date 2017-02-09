@@ -1,0 +1,9 @@
+.done-false {
+    color: red;
+}
+
+.done-true {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #999;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body ng-app="mainApp" ng-controller="app">
+  <h1>Add a task</h1>
+  <input ng-keyup="searchEnter()" ng-model="task" type="text">
+  <div class="taskstoshow">
+    <ul>
+      <li ng-repeat="task in tasks">
+        <span class="done-{{task.taskDone}}">
+          <input type="checkbox" ng-model="task.taskDone">
+          {{task.taskName}}
+        </span>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
