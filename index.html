@@ -13,8 +13,9 @@
   <div class="taskstoshow">
     <ul>
       <li ng-repeat="task in tasks">
-        <span class="done-{{task.taskDone}}">
-          <input type="checkbox" ng-model="task.taskDone">
+        <input type="checkbox" ng-model="task.taskDone">
+        <span contentEditable="false" class="done-{{task.taskDone}}"
+              ng-click="taskEdit()" ng-keydown="editDone()">
           {{task.taskName}}
         </span>
       </li>

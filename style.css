@@ -1,3 +1,11 @@
+li {
+  list-style: none;
+}
+
+span {  
+  cursor: pointer;
+}
+
 .done-false {
     color: red;
 }
@@ -6,4 +14,9 @@
   text-decoration: line-through;
   font-style: italic;
   color: #999;
+}
+
+span[contentEditable="true"] {
+  border: 1px solid #999;
+  padding: 4px;
 }
