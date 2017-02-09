@@ -9,17 +9,19 @@
 </head>
 <body ng-app="mainApp" ng-controller="app">
   <h1>Add a task</h1>
-  <input ng-keyup="searchEnter()" ng-model="task" type="text">
+  <input ng-keyup="taskEnter()" ng-model="task" type="text">
   <div class="taskstoshow">
     <ul>
-      <li ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.taskDone">
+      <li ng-repeat="task in tasks track by $index">
+        <input type="checkbox" ng-model="task.taskDone"
+              ng-change="boxChanged(task.taskName, task.taskDone)">
         <span contentEditable="false" class="done-{{task.taskDone}}"
-              ng-click="taskEdit()" ng-keydown="editDone()">
+              ng-click="taskEdit(task.taskName)" ng-keydown="editDone(task.taskName)">
           {{task.taskName}}
         </span>
       </li>
     </ul>
+    <button ng-click="cleared()">Clear</button>
   </div>
 </body>
 </html>

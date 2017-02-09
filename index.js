@@ -6,7 +6,13 @@ appX.controller('app', function($scope) {
   $scope.tasks = [];
   $scope.task="";
 
-  $scope.searchEnter = function() {
+// Local Storage
+  var taskData = localStorage['tasksList'];
+  if(taskData !== undefined) {
+    $scope.tasks = JSON.parse(taskData);
+  }
+
+  $scope.taskEnter = function() {
     if(event.which == 13 && $scope.task != "") {
       $scope.addTask();
     }
@@ -15,21 +21,42 @@ appX.controller('app', function($scope) {
   $scope.addTask = function() {
     $scope.tasks.push({'taskName': $scope.task,
      'taskDone': 'false'});
-    console.log($scope.tasks);
     $scope.task="";
+    localStorage['tasksList'] = JSON.stringify($scope.tasks);
+    document.getElementsByClassName('clear').disabled = false;
   };
 
-  $scope.taskEdit = function() {
-    console.log(event.target.contentEditable);
+  $scope.taskEdit = function(name) {
+    for (var i = 0; i < $scope.tasks.length; i++) {
+      if($scope.tasks[i].taskName == name) {
+        $scope.tasks[i].taskName = event.target.innerText;
+      }
+    }
+    localStorage['tasksList'] = JSON.stringify($scope.tasks);
+      console.log(localStorage);
     event.target.contentEditable =
       event.target.contentEditable == "false" ? "true" : "false";
-    console.log(event.target.contentEditable);
   };
 
   $scope.editDone = function(name) {
     if(event.which == 13 && name != "") {
-      $scope.taskEdit();
+      $scope.taskEdit(name);
     }
-
   };
+
+  $scope.boxChanged = function(name, done) {
+    for (var i = 0; i < $scope.tasks.length; i++) {
+      if($scope.tasks[i].taskName == name) {
+        $scope.tasks[i].taskDone = done;
+      }
+    }
+    localStorage['tasksList'] = JSON.stringify($scope.tasks);
+  };
+
+  $scope.cleared = function() {
+    $scope.tasks = [];
+    localStorage['tasksList'] = JSON.stringify($scope.tasks);
+    event.target.disabled = true;
+  }
+
 });
