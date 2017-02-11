@@ -1,9 +1,40 @@
+body {
+background: #e74c3c;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #333;
+}
+
+input {
+  background: #dedede;
+  border: solid 1px #cccccc;
+  width: 400px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
 li {
   list-style: none;
 }
 
 span {
   cursor: pointer;
+}
+
+button {
+  margin-top: 20px;
+  padding: 5px;
+  width: 100px;
+}
+
+.main {
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  margin-top: -135px;
+  text-align: center;
 }
 
 .done-false {
