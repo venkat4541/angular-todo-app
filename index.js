@@ -23,7 +23,7 @@ appX.controller('app', function($scope) {
      'taskDone': 'false'});
     $scope.task="";
     localStorage['tasksList'] = JSON.stringify($scope.tasks);
-    document.getElementsByClassName('clear').disabled = false;
+    document.getElementById('clear').disabled = false;
   };
 
   $scope.taskEdit = function(name) {
