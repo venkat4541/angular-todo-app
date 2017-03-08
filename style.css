@@ -10,9 +10,33 @@ html, body {
 body {
   width: 100vw;
   height: 100vh;
-  background: #f6f6f6;
-  color: #333;
+  background: #2f2f2f;
+  color: #f6f6f6;
   font-family: 'Dosis', sans-serif;
+}
+
+.top, .bottom {
+  font-size: 0.9em;
+  text-align: center;
+  background: #222;
+  color: #eee;
+  padding: 10px 0;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom a {
+  color: #F7CA18;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.bottom a:hover {
+  text-decoration: underline;
 }
 
 .main {
@@ -31,11 +55,7 @@ body {
 
 h1 {
   text-transform: uppercase;
-}
-
-.text p {
-  font-size: 1.3em;
-  text-align: justify;
+  color: #F7CA18;
 }
 
 .taskstoshow {
@@ -44,30 +64,79 @@ h1 {
 }
 
 input[type=text] {
-  background: #dedede;
-  border: solid 1px #cccccc;
+  background: #dfdfdf;
+  border: solid 2px #ddd;
   width: 60%;
-  height: 50px;
+  height: 25px;
   font-family: 'Dosis', sans-serif;
-  font-size: 1.5em;
-  margin-top: 20px;
+  font-size: 1.3em;
+  margin: 15px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+input[type=checkbox] {
+  border: 2px solid #ddd;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  transform: translateY(3px);
+  position: relative;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked {
+  border-color: #999;
+  transform: translateY(3px);
+}
+
+input[type=checkbox]:checked:after {
+	content: '\2714';
+	font-size: 16px;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+  color: #999;
+  /*color: #26A65B;*/
+}
+
+ul {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
 }
 
 li {
   list-style: none;
+  margin: 10px 0;
 }
 
 span {
-  font-size: 1.5em;
+  font-size: 1.3em;
   cursor: pointer;
 }
 
 button {
-  margin-top: 20px;
-  width: 200px;
-  height: 40px;
+  margin-top: 30px;
+  width: 163px;
+  height: 35px;
   font-family: 'Dosis', sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  transition: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F7CA18;
 }
 
 .done-true {
@@ -77,6 +146,6 @@ button {
 }
 
 span[contentEditable="true"] {
-  border: 1px solid #999;
+  border-bottom: 1px solid white;
   padding: 4px;
 }

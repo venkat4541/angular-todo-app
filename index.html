@@ -9,10 +9,12 @@
     <script src="index.js"></script>
 </head>
 <body ng-app="mainApp" ng-controller="app">
+    <div class="top">
+      This is a simple To-Do application to list out all your pending tasks and clear off the tasks that have been completed eventually.
+    </div>
     <div class="main">
       <div class="text">
-        <h1>Add a task</h1>
-        <p>This is a simple To-Do application to list out all your pending tasks and clear off the tasks that have been completed eventually.</p>
+        <h1>To Do List</h1>
       </div>
         <input ng-keyup="taskEnter()" ng-model="task" type="text">
         <div class="taskstoshow">
@@ -26,8 +28,11 @@
         </span>
                 </li>
             </ul>
-            <button id="clear" class="clear" ng-click="cleared()">Clear</button>
+            <button id="clear" class="clear" ng-click="cleared()">CLEAR ALL</button>
         </div>
+    </div>
+    <div class="bottom">
+      Developed by <a href="http://venkatp.com" target="_blank">Venkat Polumahanti</a>
     </div>
 </body>
 </html>
