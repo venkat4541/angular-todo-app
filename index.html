@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular To-Do App</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="index.js"></script>
 </head>
 <body ng-app="mainApp" ng-controller="app">
     <div class="main">
+      <div class="text">
         <h1>Add a task</h1>
+        <p>This is a simple To-Do application to list out all your pending tasks and clear off the tasks that have been completed eventually.</p>
+      </div>
         <input ng-keyup="taskEnter()" ng-model="task" type="text">
         <div class="taskstoshow">
             <ul>
                 <li ng-repeat="task in tasks track by $index">
                     <input type="checkbox" ng-model="task.taskDone"
                            ng-change="boxChanged(task.taskName, task.taskDone)">
-                    <span contentEditable="false" class="done-{{task.taskDone}}"
+                    <span contenteditable="false" class="done-{{task.taskDone}}"
                           ng-click="taskEdit(task.taskName)" ng-keydown="editDone(task.taskName)">
           {{task.taskName}}
         </span>

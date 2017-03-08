@@ -1,17 +1,55 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body {
-background: #e74c3c;
+  width: 100vw;
+  height: 100vh;
+  background: #f6f6f6;
+  color: #333;
+  font-family: 'Dosis', sans-serif;
+}
+
+.main {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  text-align: center;
+}
+
+.text {
+  width: 80%;
+  margin: 0 auto;
 }
 
 h1 {
   text-transform: uppercase;
-  color: #333;
 }
 
-input {
+.text p {
+  font-size: 1.3em;
+  text-align: justify;
+}
+
+.taskstoshow {
+  width: 80%;
+  margin: 0 auto;
+}
+
+input[type=text] {
   background: #dedede;
   border: solid 1px #cccccc;
-  width: 400px;
-  padding: 5px;
+  width: 60%;
+  height: 50px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.5em;
   margin-top: 20px;
 }
 
@@ -20,25 +58,16 @@ li {
 }
 
 span {
+  font-size: 1.5em;
   cursor: pointer;
 }
 
 button {
   margin-top: 20px;
-  padding: 5px;
-  width: 100px;
-}
-
-.main {
-  width: 100vw;
-  position: absolute;
-  top: 50%;
-  margin-top: -135px;
-  text-align: center;
-}
-
-.done-false {
-    color: red;
+  width: 200px;
+  height: 40px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1em;
 }
 
 .done-true {
