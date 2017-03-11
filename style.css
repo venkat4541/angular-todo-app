@@ -100,7 +100,7 @@ input[type=checkbox]:checked:after {
 	content: '\2714';
 	font-size: 16px;
   position: absolute;
-  left: 0px;
+  left: 0;
   top: -5px;
   color: #999;
   /*color: #26A65B;*/
@@ -110,6 +110,7 @@ ul {
   text-align: left;
   width: 80%;
   margin: 0 auto;
+	padding: 0;
 }
 
 li {
@@ -146,6 +147,13 @@ button:hover {
 }
 
 span[contentEditable="true"] {
-  border-bottom: 1px solid white;
-  padding: 4px;
+  padding-bottom: 4px;
+	animation: under 2s infinite;
+	outline: none;
+}
+
+@keyframes under {
+	0% {border-bottom: 1px dotted #f7ca18;}
+	50% {border-bottom: 1px solid #f7ca18;}
+	100% {border-bottom: 1px dotted #f7ca18;}
 }

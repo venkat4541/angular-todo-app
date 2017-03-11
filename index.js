@@ -33,7 +33,6 @@ appX.controller('app', function($scope) {
       }
     }
     localStorage['tasksList'] = JSON.stringify($scope.tasks);
-      console.log(localStorage);
     event.target.contentEditable =
       event.target.contentEditable == "false" ? "true" : "false";
   };
@@ -47,7 +46,13 @@ appX.controller('app', function($scope) {
   $scope.boxChanged = function(name, done) {
     for (var i = 0; i < $scope.tasks.length; i++) {
       if($scope.tasks[i].taskName == name) {
-        $scope.tasks[i].taskDone = done;
+        if($scope.tasks[i].taskDone != done) {
+          $scope.tasks[i].taskDone = done;
+        } else {
+          $scope.tasks.push({'taskName': name,
+            'taskDone': 'true'});
+          $scope.tasks.splice(i,1);
+        }
       }
     }
     localStorage['tasksList'] = JSON.stringify($scope.tasks);
